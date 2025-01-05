@@ -1,0 +1,22 @@
+name: Test Self-Hosted Runner
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Print Hostname
+        run: hostname
+
+      - name: Print Working Directory
+        run: pwd
+
+      - name: Print Hello World
+        run: echo "Hello from your self-hosted runner!"
